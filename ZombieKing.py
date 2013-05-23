@@ -62,11 +62,11 @@ def churchDecision2():
         choice = raw_input()
 
         if choice == "left":
-            decision3AA()
+            churchDecision3Left()
         else:
-            decision3AB()
+            churchDecision3Right()
 #LEFT decision2 _________________________________________________________________________________________           
-def decision3AA():
+def churchDecision3Left():
     choice =''
     while choice != 'MG' and choice != 'HG':
         print ('You begin to search the room...')
@@ -114,9 +114,9 @@ def decision4AB():
     print ('')
 #RIGHT_________________________________________________________________________________________________
   
-def decision3AB():
+def churchDecision3Right():
     choice =''
-    while choice != 'left' and choice != 'right':
+    while choice != 'sneak' and choice != 'fight':
         print ('You continue to walk down the hallway...')
         time.sleep(1)
         print ('You hear a large number of groaning zombies further down the hall...')
@@ -126,7 +126,51 @@ def decision3AB():
         time.sleep(3)
         print ('Please enter your choice sneak or fight: ')
         choice = raw_input()
+        
+        if choice == "sneak":
+            churchDecision4Sneak()
+        else:
+            churchDecision4Fight()
+        
+def churchDecision4Sneak():
     
+        print ('You continue to sneak down the hallway...')
+        time.sleep(1)
+        print ('As you slowly move past the horde of zombies, making sure to not to make a sound...')
+        time.sleep(2)
+        print ('You accidently step on a rotten floor board!')
+        time.sleep(2)
+        print ("The zombies suddenly become aware of your presence!.")
+        time.sleep(2)
+        print ("The zombies charge at you! They claw, bite and chase you as you start to run!.")
+        time.sleep(2)
+        print ("While running away from the zombies you are bitten!")
+        time.sleep(2)
+        print ('The virus begins to spread through your viens.')
+        time.sleep(1)
+        print ("You try to fight it but their is no hope.")    
+        time.sleep(1)
+        print ("You have turned into a zombie! You have died!")    
+        
+def churchDecision4Fight():
+    
+        print ('You continue to walk down the hallway...')
+        time.sleep(1)
+        print ('You pick up a rotten floor board and charge at the zombies!')
+        time.sleep(2)
+        print ('Even with all of your zombie killing skill you are no match for the zombie horde!')
+        time.sleep(2)
+        print ("While you savagely strike at the zombies you are bitten!")
+        time.sleep(2)
+        print ('The virus begins to spread through your viens.')
+        time.sleep(1)
+        print ("You try to fight it but their is no hope.")    
+        time.sleep(1)
+        print ("You have turned into a zombie! You have died!")    
+        
+#End of the church options________________________________________________________________________________
+        
+
 def catacombsDecision2():
     print ('test Choice 2 Chosen')
    
