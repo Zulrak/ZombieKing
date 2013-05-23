@@ -1,10 +1,15 @@
-""" Name: Jordan Cooper
-    Date: Wednesday, May 08, 2013
-    Purpose: Create a working version of the diagram (as seen in the table of contents).
-             The Player will be asked to make a series of decisions that will ultimately
-             lead to the success or failure of the mission, collecting the treasure from
-             the friendly dragon's choice. The program must provide at least 3 levels of
-             decisions.
+"""
+    Author: Jordan Cooper
+    Last Modified By: Jordan Cooper
+    Last Modified: May 23 13
+    Program Discription: The Player will be asked to make a series of decisions that will ultimately
+                         lead to the success or failure of the mission, to save your companion from
+                         the evil Zombie King and his horde of undead minions. The player must go through
+                         3 different levels of decisions and use the special items in an attempt to win the game.
+    Version 1.4 - Completed the final game
+                - 3 decision levels 
+                - formatted the outcome text to look neat and readable
+                
 """
 import time
 
@@ -85,6 +90,9 @@ def churchDecision3Left():
             churchDecision4HG()
 
 def churchDecision4MG():
+    
+    print ('')
+    time.sleep(2)
     print ('You take the Machine Gun and continue into the next room')  
     print ('Suddenly a horde of zombies pop out and attack you!')
     time.sleep(2)
@@ -102,6 +110,9 @@ def churchDecision4MG():
     print ('')
     
 def churchDecision4HG():
+    
+    print ('')
+    time.sleep(2)
     print ('You leave the Machine Gun and continue into the next room')   
     print ('Suddenly a horde of zombies pop out and attack you!')
     time.sleep(2)
@@ -137,6 +148,8 @@ def churchDecision3Right():
         
 def churchDecision4Sneak():
     
+    print ('')
+    time.sleep(1)
     print ('You continue to sneak down the hallway...')
     time.sleep(1)
     print ('As you slowly move past the horde of zombies, making sure to not to make a sound...')
@@ -153,10 +166,14 @@ def churchDecision4Sneak():
     time.sleep(1)
     print ("You try to fight it but their is no hope.")    
     time.sleep(1)
-    print ("You have turned into a zombie! You have died!")    
+    print ("You have turned into a zombie! You have died!") 
+    print ('')
+    print ('')   
         
 def churchDecision4Fight():
-        
+    
+    print ('')
+    time.sleep(1)
     print ('You continue to walk down the hallway...')
     time.sleep(1)
     print ('You pick up a rotten floor board and charge at the zombies!')
@@ -170,6 +187,8 @@ def churchDecision4Fight():
     print ("You try to fight it but their is no hope.")    
     time.sleep(1)
     print ("You have turned into a zombie! You have died!")    
+    print ('')
+    print ('')
         
 #Catacombs________________________________________________________________________________
         
@@ -238,9 +257,12 @@ def catacombsDecision4Take():
     print ('You finish off the rest of the zombies with your tatical knife and rescue your companion!')
     time.sleep(2)
     print ('Congradulations you have successfully rescued your companion and defeated the zombie king!')
+    print ('')
+    print ('')
 
 def catacombsDecision4Leave():
     
+    print ('')
     time.sleep(2)
     print ('You continue to walk down the hall until you reach the end of the hall')
     time.sleep(2)
@@ -266,31 +288,69 @@ def catacombsDecision4Leave():
     time.sleep(2)
     print ('You lost too much blood to survive. The horde of zombies eats your corpse!')
     print ('You have died!!!')
+    print ('')
+    print ('')
 
 
 #Forward_________________________________________________________________________________________
 
 def catacombsDecision3Forward():
     choice =''
-    while choice != 'down' and choice != 'forward':
-        print ('You begin to search the church...')
+    while choice != 'caution' and choice != 'run':
+        print ('You begin to search the catacombs...')
         time.sleep(2)
-        print ('You find the passageway into the catacombs under the alter!')
-        time.sleep(3)
+        print ('As you walk down the hall you notice a pile of corpses down the hall')
+        time.sleep(2)
+        print ('The bodies are riddled with arrows, the hall must be booby trapped')
+        time.sleep(2)
+        print('You can proceed with caution or take your chances and run like hell!')
         print('')
-        print ('Please enter your choice down or forward: ')
+        print ("Please enter your choice 'caution' or 'run': ")
         choice = raw_input()
 
-        if choice == "down":
-            catacombsDecision3Down()
+        if choice == "caution":
+            catacombsDecision4Caution()
         else:
-            catacombsDecision3Forward()
+            catacombsDecision4Run()
+            
+def catacombsDecision4Caution():
+    
+    print ('')
+    print('You pick up a handful of rocks from the floor and toss them down the hall...')
+    time.sleep(2)
+    print('The rocks triggered the pressure plates on the floor, can hear the arrow dispenser firing but no arrows appear, it must have ran out.')
+    time.sleep(2)
+    print('Slowly you proceed down the hall, you cut the tripwire and proceed down the dark, wet hall')
+    time.sleep(2)
+    print('Suddenly...')
+    time.sleep(1)
+    print('You turn the corner and a zombie pops out and eats you! You have died!')
+    time.sleep(2)
+    print('')
+    print ('')
+    
+def catacombsDecision4Run():
+    
+    print ('')
+    print('Taking a few steps back, you get ready to run past the traps!')
+    time.sleep(2)
+    print('You sprint past the pressure triggered arrows, leap past the corpses of those who fell before you')
+    print('but just as you think you have made it past the traps...')
+    time.sleep(2)
+    print('Your foot lands on the tripwire! The ground begins to crumble under you!')
+    time.sleep(2)
+    print('You have been impailed on a pile of jagged steel spikes')
+    print('You have died!')
+    time.sleep(2)
+    print('')
+    print ('')
+    
 #End of game_________________________________________________________________________________________          
 def main():    
     
     playAgain = 'yes'
     while playAgain == 'yes' or playAgain == 'y':
-        # displayIntro()
+        displayIntro()
         decision1()
 
         print ('Do you want to play again? (yes or no)')
